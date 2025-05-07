@@ -58,7 +58,7 @@ class Vehicle {
     }
 
     getInfo(): string {
-        return `Make ${this.make}, year ${this.year} `
+        return `Make: ${this.make}, year: ${this.year} `
     }
 
     
@@ -68,16 +68,17 @@ class Car extends Vehicle {
     private model: string;
 
     constructor(make: string, year: number, model: string) {
-        super(model, year);
+        super(make, year);
         this.model = model
     }
 
     getModel(): string{
-        return `Model ${this.model}`
+        return `Model: ${this.model}`
     }
 }
 
 
 const myCar = new Car("Toyota", 2020, "Corolla");
-myCar.getInfo();
-myCar.getModel();
+
+console.log(myCar.getInfo());
+console.log(myCar.getModel());
