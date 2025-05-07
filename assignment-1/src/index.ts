@@ -58,7 +58,7 @@ class Vehicle {
     }
 
     getInfo(): string {
-        return `Make: ${this.make}, year: ${this.year} `
+        return `"Make: ${this.make}, year: ${this.year}"`
     }
 
     
@@ -73,12 +73,27 @@ class Car extends Vehicle {
     }
 
     getModel(): string{
-        return `Model: ${this.model}`
+        return `"Model: ${this.model}"`
     }
 }
 
 
 const myCar = new Car("Toyota", 2020, "Corolla");
 
-console.log(myCar.getInfo());
-console.log(myCar.getModel());
+// console.log(myCar.getInfo());
+// console.log(myCar.getModel());
+
+
+
+// problem 5
+function processValue(value: string | number): number {
+    if(typeof value === 'string'){
+        return value.length
+    }
+    else{
+        return value * 2
+    }
+}
+
+console.log(processValue("hello"));
+console.log(processValue(10));
