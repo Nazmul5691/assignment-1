@@ -1,5 +1,4 @@
-// problem -1
-
+// uppercase or lowercase 
 function formatString(input: string, toUpper?: boolean): string {
     if (toUpper === false) {
         return input.toLowerCase();
@@ -9,15 +8,15 @@ function formatString(input: string, toUpper?: boolean): string {
     }
 }
 
-// console.log(formatString('Hello'));
-// console.log(formatString('HELLO'));
-// console.log(formatString('HELLO', true));
-// console.log(formatString('HELLO', false));
+console.log(formatString('Hello'));
+console.log(formatString('HELLO'));
+console.log(formatString('HELLO', true));
+console.log(formatString('HELLO', false));
 
 
 
-// problem-2
 
+// filter by rating
 const filterByRating = (items: { title: string; rating: number }[]): { title: string; rating: number }[] => {
     return items.filter(item => item.rating >= 4)
 }
@@ -29,12 +28,12 @@ const books = [
 ];
 
 const filteredBooks = filterByRating(books)
-// console.log(filteredBooks);
+console.log(filteredBooks);
 
 
 
 
-// problem 3
+// Concatenate Arrays
 function concatenateArrays<T>(...arrays: T[][]): T[] {
     return arrays.reduce((acc, current) => acc.concat(current), [])
 }
@@ -43,11 +42,11 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 const concatTwoArrays = concatenateArrays(['a', 'b'], ['c', 'd'])
 const concatMultipleArrays = concatenateArrays([1, 2], [3, 4], [5, 6, 7])
 
-// console.log(concatTwoArrays, concatMultipleArrays);
+console.log(concatTwoArrays, concatMultipleArrays);
 
 
 
-// problem 4
+// inheritance
 class Vehicle {
     private make: string;
     private year: number;
@@ -80,12 +79,12 @@ class Car extends Vehicle {
 
 const myCar = new Car("Toyota", 2020, "Corolla");
 
-// console.log(myCar.getInfo());
-// console.log(myCar.getModel());
+console.log(myCar.getInfo());
+console.log(myCar.getModel());
 
 
 
-// problem 5
+// get value length or double
 function processValue(value: string | number): number {
     if (typeof value === 'string') {
         return value.length
@@ -95,12 +94,12 @@ function processValue(value: string | number): number {
     }
 }
 
-// console.log(processValue("hello"));
-// console.log(processValue(10));
+console.log(processValue("hello"));
+console.log(processValue(10));
 
 
 
-// problem 6
+// maximum price product
 interface Product {
     name: string;
     price: number;
@@ -112,8 +111,8 @@ function getMostExpensiveProduct(products: Product[]): Product | null {
         return null
     }
     else {
-        return products.reduce((max, current) => {
-            return current.price > max.price ? current : max
+        return products.reduce((acc, current) => {
+            return current.price > acc.price ? current : acc
         })
     }
 }
@@ -125,11 +124,11 @@ const products = [
     { name: "Pencil", price: 100 }
 ];
 
-// console.log(getMostExpensiveProduct(products));
+console.log(getMostExpensiveProduct(products));
 
 
 
-// problem 7
+// day checker
 enum Day {
     Monday,
     Tuesday,
@@ -149,12 +148,12 @@ function getDayType(day: Day): string {
     }
 }
 
-// console.log(getDayType(Day.Sunday));
-// console.log(getDayType(Day.Tuesday));
+console.log(getDayType(Day.Sunday));
+console.log(getDayType(Day.Tuesday));
 
 
 
-// problem 8
+// square and delay setTimeout
 async function squareAsync(n: number): Promise<number> {
     return new Promise<number>((resolve, reject) => {
         setTimeout(() => {
