@@ -1,6 +1,8 @@
 ## 2. What is the use of the keyof keyword in TypeScript? Provide an example.
 - The keyof keyword in typeScript is use for create a union type of the keys of a given type (object or interface).
+
 keyof keyword helps to extract the keys of an object as a union type.
+
 keyof used for safely access properties of an object dynamically.
 
 
