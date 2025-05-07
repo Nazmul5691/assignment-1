@@ -125,4 +125,48 @@ const products = [
     { name: "Pencil", price: 100 }
 ];
 
-console.log(getMostExpensiveProduct(products));
+// console.log(getMostExpensiveProduct(products));
+
+
+
+// problem 7
+enum Day {
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday,
+    Sunday
+}
+
+function getDayType(day: Day): string {
+    if (day === Day.Saturday || day === Day.Sunday) {
+        return "Weekend"
+    }
+    else {
+        return "Weekday"
+    }
+}
+
+// console.log(getDayType(Day.Sunday));
+// console.log(getDayType(Day.Tuesday));
+
+
+
+// problem 8
+async function squareAsync(n: number): Promise<number> {
+    return new Promise<number>((resolve, reject) => {
+        setTimeout(() => {
+            if (n > 0) {
+                resolve(n * n)
+            }
+            else {
+                reject(new Error("Negative number not allowed"))
+            }
+        }, 1000)
+    })
+}
+
+squareAsync(4).then(console.log);       
+squareAsync(-3).catch(console.error);
